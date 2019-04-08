@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "13168343012",
+    "firebase_url": "https://tangodentv2-e67f7.firebaseio.com",
+    "project_id": "tangodentv2-e67f7",
+    "storage_bucket": "tangodentv2-e67f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13168343012:android:3cb2f5de99102b65",
+        "android_client_info": {
+          "package_name": "com.example.tangodent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "13168343012-o3cb9tha0nhbj1ntfsv7l1krgj6ksauo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tangodent",
+            "certificate_hash": "bd5775ddfa2323bbfdc28399a1ae944c876a7f75"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEKbd8i6Dd2awIouvMnVKbtUm9FyfVugQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "13168343012-4pmoi5b4etoh5ao5j709miasfv6ibmp7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
