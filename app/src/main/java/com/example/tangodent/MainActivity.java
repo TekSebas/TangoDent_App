@@ -72,18 +72,7 @@ FirebaseAuth.AuthStateListener mAuthListener;
 
     }
 
-    private void registrar(String email, String pass){
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Log.i("SESION","Usuario creado correctamente");
-                }else{
-                    Log.e("SESION",task.getException().getMessage()+"");
-                }
-            }
-        });
-      }
+
     private void iniciar(String email, String pass){
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -114,11 +103,16 @@ FirebaseAuth.AuthStateListener mAuthListener;
                 break;
             case R.id.botonRegistro:
 
-                String email_Registro= ed.getText().toString();
+                Intent intent= new Intent(getApplicationContext(),Main2Activity.class);
+                startActivity(intent);
+
+
+
+                /*String email_Registro= ed.getText().toString();
                 String pass_Registro= ed1.getText().toString();
 
                 registrar(email_Registro,pass_Registro);
-
+                */
 
                 break;
 
