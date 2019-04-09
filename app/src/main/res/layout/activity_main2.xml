@@ -99,9 +99,12 @@
         android:id="@+id/textNacimiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="288dp"
         android:ems="10"
         android:hint="Fecha de Nacimiento"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="298dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

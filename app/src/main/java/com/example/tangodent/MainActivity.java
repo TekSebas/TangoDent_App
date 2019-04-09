@@ -85,7 +85,7 @@ FirebaseAuth.AuthStateListener mAuthListener;
                     Log.e("SESION",task.getException().getMessage()+"");
                 }
             }
-        });;
+        });
     }
 
     @Override
