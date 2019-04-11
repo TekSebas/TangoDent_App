@@ -58,7 +58,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
 
         Usuario usuario = new Usuario(nombre_Registro,apellido_Registro,direccion_Registro,fechaNacimiento_Registro,email_Registro,pass_Registro);
-        usuariosRef.child(FirebaseReferences.COCHE_REFERENCE).push().setValue(usuario);
+        usuariosRef.child(FirebaseReferences.USUARIO_REFERENCE).push().setValue(usuario);
 
     }
 

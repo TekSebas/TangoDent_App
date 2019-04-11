@@ -9,9 +9,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-        <activity android:name=".ActivityAdmin"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".FuncionesDoctor.ActivityCitas"></activity>
+        <activity android:name=".ActivityAdmin" />
         <activity android:name=".ActivityDoctor" />
         <activity android:name=".Main2Activity" />
         <activity

@@ -1,9 +1,12 @@
 package com.example.tangodent;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.tangodent.FuncionesDoctor.ActivityCitas;
 
 public class ActivityDoctor extends AppCompatActivity implements View.OnClickListener{
 
@@ -27,8 +30,25 @@ public class ActivityDoctor extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch(v.getId()){
 
+            case R.id.botonTomaCitas:
+
+                Intent intentCitas= new Intent(this, ActivityCitas.class);
+                startActivity(intentCitas);
 
 
+                break;
+            case R.id.botonCalendario:
+
+
+
+
+                break;
+            case R.id.botonOpcionesUser:
+
+
+
+
+                break;
 
 
         }
