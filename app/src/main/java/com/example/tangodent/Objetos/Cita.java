@@ -1,14 +1,15 @@
 package com.example.tangodent.Objetos;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.sql.Timestamp;
-import java.util.Date;
 
 public class Cita {
     public String nombreServicio;
-    public Date fechaYhora;
+    public java.sql.Date fecha;
+    public Time hora;
     public String nombre;
     public String email;
-    public String teléfono;
     public String telefono;
     public String direccion;
     public String ciudad;
@@ -16,15 +17,39 @@ public class Cita {
     public Cita() {
     }
 
-    public Cita(String nombreServicio, Date fechaYhora, String nombre, String email, String teléfono, String telefono, String direccion, String ciudad) {
+    public Cita(String nombreServicio, Date fecha, Time hora, String nombre, String email, String telefono, String direccion, String ciudad) {
         this.nombreServicio = nombreServicio;
-        this.fechaYhora = fechaYhora;
+        this.fecha = fecha;
+        this.hora = hora;
         this.nombre = nombre;
         this.email = email;
-        this.teléfono = teléfono;
         this.telefono = telefono;
         this.direccion = direccion;
         this.ciudad = ciudad;
+    }
+
+    public String getNombreServicio() {
+        return nombreServicio;
+    }
+
+    public void setNombreServicio(String nombreServicio) {
+        this.nombreServicio = nombreServicio;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Time getHora() {
+        return hora;
+    }
+
+    public void setHora(Time hora) {
+        this.hora = hora;
     }
 
     public String getNombre() {
@@ -41,14 +66,6 @@ public class Cita {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getTeléfono() {
-        return teléfono;
-    }
-
-    public void setTeléfono(String teléfono) {
-        this.teléfono = teléfono;
     }
 
     public String getTelefono() {
@@ -73,21 +90,5 @@ public class Cita {
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
-    }
-
-    public String getNombreServicio() {
-        return nombreServicio;
-    }
-
-    public void setNombreServicio(String nombreServicio) {
-        this.nombreServicio = nombreServicio;
-    }
-
-    public Date getFechaYhora() {
-        return fechaYhora;
-    }
-
-    public void setFechaYhora(Date fechaYhora) {
-        this.fechaYhora = fechaYhora;
     }
 }

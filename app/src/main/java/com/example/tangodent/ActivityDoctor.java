@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.tangodent.FuncionesDoctor.ActivityCitas;
-
 public class ActivityDoctor extends AppCompatActivity implements View.OnClickListener{
 
     Button botonCita,botonEventos,botonOpciones;
