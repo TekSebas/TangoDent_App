@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 public class Cita {
     public String nombreServicio;
     public java.sql.Date fecha;
-    public Time hora;
+    public long hora;
     public String nombre;
     public String email;
     public String telefono;
@@ -17,7 +17,7 @@ public class Cita {
     public Cita() {
     }
 
-    public Cita(String nombreServicio, Date fecha, Time hora, String nombre, String email, String telefono, String direccion, String ciudad) {
+    public Cita(String nombreServicio, Date fecha, long hora, String nombre, String email, String telefono, String direccion, String ciudad) {
         this.nombreServicio = nombreServicio;
         this.fecha = fecha;
         this.hora = hora;
@@ -27,6 +27,7 @@ public class Cita {
         this.direccion = direccion;
         this.ciudad = ciudad;
     }
+
 
     public String getNombreServicio() {
         return nombreServicio;
@@ -44,11 +45,11 @@ public class Cita {
         this.fecha = fecha;
     }
 
-    public Time getHora() {
+    public long getHora() {
         return hora;
     }
 
-    public void setHora(Time hora) {
+    public void setHora(long hora) {
         this.hora = hora;
     }
 

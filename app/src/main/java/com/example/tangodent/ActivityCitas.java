@@ -68,23 +68,28 @@ public class ActivityCitas extends AppCompatActivity implements View.OnClickList
         String ciudad= edCiudad.getText().toString();
 
 
-        System.out.println();
+        System.out.println(f);
 
-        /*try {
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-            System.out.println("-------"+f);
-        java.util.Date fecha = format.parse(f);
+        try {
 
-        java.sql.Date sql = new java.sql.Date(fecha.getTime());
+        SimpleDateFormat formatFecha = new SimpleDateFormat("dd/MM/yyyy");
+            System.out.println(f);
+        java.util.Date fecha = formatFecha.parse(f);
+        java.sql.Date sqlFecha = new java.sql.Date(fecha.getTime());
 
 
-        Time hora= Time.valueOf(h);
+        SimpleDateFormat formatHora = new SimpleDateFormat("hh:mm");
+        long sqlHora = formatHora.parse(h).getTime();
 
-        Cita cita= new Cita(nombreServicio,sql,hora,nombre,email,telefono,direccion,ciudad);
+
+
+
+
+        Cita cita= new Cita(nombreServicio,sqlFecha,sqlHora,nombre,email,telefono,direccion,ciudad);
 
         citaCRUD.crearCita(cita,cn);
         } catch (ParseException e) {
         e.printStackTrace();
-    }*/
+    }
     }
 }

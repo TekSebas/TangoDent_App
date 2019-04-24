@@ -19,8 +19,11 @@ public class CitaCRUD {
         String consulta="INSERT INTO citas (nombreServicio,fecha,hora, nombrePaciente, email, telefono,direccion,ciudad) VALUES " +
                 "('" + cita.getNombreServicio() + "','" + cita.getFecha() +"','" + cita.getHora() + "','"+cita.getNombre() + "','"+cita.getEmail() + "','"+cita.getTelefono() + "','"+
                 cita.getDireccion() + "','"+cita.getCiudad() + "')";
+
             sentencia= cn.createStatement();
+
             sentencia.executeUpdate(consulta);
+
             System.out.println("DONE!");
         } catch (SQLException e) {
             e.printStackTrace();
