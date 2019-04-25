@@ -7,9 +7,31 @@
     android:background="@mipmap/fondoplano"
     tools:context=".ActivityCitas">
 
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingLeft="90dp"
+        android:paddingTop="15dp"
+        android:text="Nueva cita"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorLink="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007" />
+
     <ScrollView
-        android:layout_width="383dp"
-        android:layout_height="644dp"
+        android:layout_width="396dp"
+        android:layout_height="622dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
@@ -18,33 +40,12 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.894">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="match_parent"
-                android:layout_height="74dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:paddingLeft="90dp"
-                android:paddingTop="15dp"
-                android:text="Nueva cita"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorLink="@color/colorAccent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.517"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.007" />
 
             <TextView
                 android:id="@+id/textView13"
@@ -71,7 +72,7 @@
                 app:layout_constraintVertical_bias="0.823" />
 
             <TextView
-                android:id="@+id/textFecha"
+                android:id="@+id/textF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fecha:" />
@@ -86,7 +87,7 @@
                 android:inputType="date" />
 
             <TextView
-                android:id="@+id/textHora"
+                android:id="@+id/textH"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hora" />
@@ -246,18 +247,6 @@
 
             <Button
                 android:id="@+id/botonGuardarCita"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-                android:text="Guardar cita"
-                android:textColor="@color/colorAccent"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="401dp" />
-
-            <Button
-                android:id="@+id/botonBuscar"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"

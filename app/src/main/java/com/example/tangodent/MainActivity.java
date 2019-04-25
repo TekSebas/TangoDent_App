@@ -156,6 +156,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         break;
 
+                    case R.id.EntradaRapida:
+
+                        Intent intent1 = new Intent(getApplicationContext(), ActivityCitas.class);
+                        startActivity(intent1);
+
+                        break;
+
                 }
             }
 

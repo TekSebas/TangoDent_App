@@ -1,5 +1,6 @@
 package com.example.tangodent;
 
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +37,8 @@ public class ActivityCitas extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citas);
 
+
+
         cn=db.getConnection();
 
         edServicio=findViewById(R.id.textServicio);
@@ -68,7 +71,7 @@ public class ActivityCitas extends AppCompatActivity implements View.OnClickList
         String ciudad= edCiudad.getText().toString();
 
 
-        System.out.println(f);
+        //System.out.println(f);
 
         try {
 
@@ -81,15 +84,11 @@ public class ActivityCitas extends AppCompatActivity implements View.OnClickList
         SimpleDateFormat formatHora = new SimpleDateFormat("hh:mm");
         long sqlHora = formatHora.parse(h).getTime();
 
-
-
-
-
         Cita cita= new Cita(nombreServicio,sqlFecha,sqlHora,nombre,email,telefono,direccion,ciudad);
 
-        citaCRUD.crearCita(cita,cn);
+        citaCRUD.crearCitas(cita,cn);
         } catch (ParseException e) {
-        e.printStackTrace();
+        e.getMessage();
     }
     }
 }

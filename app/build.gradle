@@ -9,7 +9,24 @@ android {
         exclude 'com/mysql/jdbc/configs/fullDebug.properties'
         exclude 'META-INF/INDEX.LIST'
         exclude 'com/mysql/jdbc/configs/solarisMaxPerformance.properties'
+        exclude 'com/mysql/jdbc/configs/5-0-Compat.properties'
+        exclude 'com/mysql/jdbc/configs/clusterBase.properties'
+        exclude 'com/mysql/jdbc/configs/coldFusion.properties'
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
     }*/
+    packagingOptions{
+        exclude 'com/mysql/jdbc/configs/'
+    }
+
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.tangodent"
@@ -35,8 +52,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:16.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.3'
     implementation 'com.airbnb.android:lottie:2.5.0'
-    //implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //implementation files ('C:\\Users\\jsschuller\\Documents\\workspace-sts-3.9.7.RELEASE\\ProyectosClase\\Ejemplo_CRUD_DAO\\resources\\mysql-connector-java-5.1.38-bin.jar')
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
