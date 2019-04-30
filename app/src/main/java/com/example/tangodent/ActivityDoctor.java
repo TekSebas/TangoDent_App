@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.tangodent.Conexion.ConexionSQLiteHelper;
+
 public class ActivityDoctor extends AppCompatActivity implements View.OnClickListener{
 
     Button botonCita,botonEventos,botonOpciones;
@@ -14,6 +16,7 @@ public class ActivityDoctor extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor);
+        ConexionSQLiteHelper conn= new ConexionSQLiteHelper(this,"tangodentdb",null,1);
 
         botonCita=findViewById(R.id.botonTomaCitas);
         botonEventos=findViewById(R.id.botonCalendario);
@@ -31,6 +34,9 @@ public class ActivityDoctor extends AppCompatActivity implements View.OnClickLis
             case R.id.botonTomaCitas:
 
                 Intent intentCitas= new Intent(this, ActivityCitas.class);
+
+
+
                 startActivity(intentCitas);
 
 

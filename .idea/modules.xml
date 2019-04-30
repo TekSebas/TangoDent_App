@@ -4,8 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TangoDent_App.iml" filepath="$PROJECT_DIR$/TangoDent_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mysql-connector-java-5.1.38-bin/mysql-connector-java-5.1.38-bin.iml" filepath="$PROJECT_DIR$/mysql-connector-java-5.1.38-bin/mysql-connector-java-5.1.38-bin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47.iml" filepath="$PROJECT_DIR$/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47.iml" />
     </modules>
   </component>
 </project>

@@ -1,5 +1,7 @@
 package com.example.tangodent;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,19 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.tangodent.Conexion.Conexion;
+import com.example.tangodent.Conexion.ConexionSQLiteHelper;
 import com.example.tangodent.FuncionesDoctor.*;
-import com.example.tangodent.Objetos.Cita;
-import com.example.tangodent.Objetos.FirebaseReferences;
-import com.example.tangodent.Objetos.Usuario;
-import com.example.tangodent.R;
-
 import java.sql.Connection;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.sql.Time;
+
 
 
 public class ActivityCitas extends AppCompatActivity implements View.OnClickListener{
@@ -29,17 +24,13 @@ public class ActivityCitas extends AppCompatActivity implements View.OnClickList
     EditText edServicio,edNombre,edEmail,edTelefono,edDireccion,edCiudad;
     TextView edFecha,edHora;
     Button botonCita;
-    Conexion db;
+
     Connection cn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citas);
-
-
-
-        cn=db.getConnection();
 
         edServicio=findViewById(R.id.textServicio);
         edFecha= findViewById(R.id.textFecha);
@@ -61,6 +52,12 @@ public class ActivityCitas extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         CitaCRUD citaCRUD= new CitaCRUD();
+        registrarCita();
+
+
+    }
+
+    private void registrarCita(){
         String nombreServicio= edServicio.getText().toString();
         String f= edFecha.getText().toString();
         String h= edHora.getText().toString();
@@ -69,26 +66,25 @@ public class ActivityCitas extends AppCompatActivity implements View.OnClickList
         String telefono= edTelefono.getText().toString();
         String direccion= edDireccion.getText().toString();
         String ciudad= edCiudad.getText().toString();
+        ConexionSQLiteHelper conn= new ConexionSQLiteHelper(this,"tangodentdb",null,1);
+        SQLiteDatabase db= conn.getWritableDatabase();
 
+        ContentValues values= new ContentValues();
+        values.put("idCita",1);
+        values.put("nombreServicio",nombreServicio);
+        values.put("fecha",f);
+        values.put("hora",h);
+        values.put("nombrePaciente",nombre);
+        values.put("email",email);
+        values.put("telefono",telefono);
+        values.put("direccion",direccion);
+        values.put("ciudad",ciudad);
 
-        //System.out.println(f);
+        Long idResultante= db.insert("citas","idCita",values);
 
-        try {
-
-        SimpleDateFormat formatFecha = new SimpleDateFormat("dd/MM/yyyy");
-            System.out.println(f);
-        java.util.Date fecha = formatFecha.parse(f);
-        java.sql.Date sqlFecha = new java.sql.Date(fecha.getTime());
-
-
-        SimpleDateFormat formatHora = new SimpleDateFormat("hh:mm");
-        long sqlHora = formatHora.parse(h).getTime();
-
-        Cita cita= new Cita(nombreServicio,sqlFecha,sqlHora,nombre,email,telefono,direccion,ciudad);
-
-        citaCRUD.crearCitas(cita,cn);
-        } catch (ParseException e) {
-        e.getMessage();
+        Toast.makeText(this, "Id Registro: "+idResultante, Toast.LENGTH_SHORT).show();
+        db.close();
     }
+
     }
-}
+
