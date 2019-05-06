@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/fondoplano"
-    tools:context=".ActivityCitas">
+    tools:context=".ActivityRegistroCitas">
 
     <TextView
         android:id="@+id/textView12"
@@ -40,7 +40,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.894">
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -108,7 +108,7 @@
                 android:text="Duracion(aprox.):" />
 
             <EditText
-                android:id="@+id/textDireccion"
+                android:id="@+id/textDuracion"
                 android:layout_width="334dp"
                 android:layout_height="43dp"
                 android:layout_marginEnd="8dp"
@@ -150,6 +150,21 @@
                 app:layout_constraintVertical_bias="0.129" />
 
             <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DNI" />
+
+            <EditText
+                android:id="@+id/textDNI"
+                android:layout_width="334dp"
+                android:layout_height="43dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                android:ems="10"
+                android:hint="DNI"
+                android:inputType="textPersonName" />
+
+            <TextView
                 android:id="@+id/textView18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -164,7 +179,7 @@
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
                 android:ems="10"
-                android:hint="Nombre"
+                android:hint="Email"
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -188,7 +203,7 @@
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
                 android:ems="10"
-                android:hint="Nombre"
+                android:hint="Teléfono"
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -212,7 +227,7 @@
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
                 android:ems="10"
-                android:hint="Nombre"
+                android:hint="Dirección"
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -236,7 +251,7 @@
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
                 android:ems="10"
-                android:hint="Nombre"
+                android:hint="Ciudad"
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

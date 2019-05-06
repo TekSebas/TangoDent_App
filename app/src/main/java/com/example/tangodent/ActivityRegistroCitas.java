@@ -2,11 +2,8 @@ package com.example.tangodent;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.StrictMode;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,9 +16,9 @@ import java.sql.Connection;
 
 
 
-public class ActivityCitas extends AppCompatActivity implements View.OnClickListener{
+public class ActivityRegistroCitas extends AppCompatActivity implements View.OnClickListener{
 
-    EditText edServicio,edNombre,edEmail,edTelefono,edDireccion,edCiudad;
+    EditText edServicio,edNombre,edDNI,edEmail,edTelefono,edDireccion,edCiudad;
     TextView edFecha,edHora;
     Button botonCita;
 
@@ -30,18 +27,19 @@ public class ActivityCitas extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_citas);
+        setContentView(R.layout.activity_registro_citas);
 
         edServicio=findViewById(R.id.textServicio);
         edFecha= findViewById(R.id.textFecha);
         edHora=findViewById(R.id.textHora);
         edNombre=findViewById(R.id.textNombre);
+        edDNI=findViewById(R.id.textDNI);
         edEmail=findViewById(R.id.textEmail);
         edTelefono=findViewById(R.id.textTelefono);
         edDireccion=findViewById(R.id.textDireccion);
         edCiudad=findViewById(R.id.textCiudad);
-
         botonCita=findViewById(R.id.botonGuardarCita);
+
 
         botonCita.setOnClickListener(this);
 
@@ -62,6 +60,7 @@ public class ActivityCitas extends AppCompatActivity implements View.OnClickList
         String f= edFecha.getText().toString();
         String h= edHora.getText().toString();
         String nombre= edNombre.getText().toString();
+        String dni=edDNI.getText().toString();
         String email= edEmail.getText().toString();
         String telefono= edTelefono.getText().toString();
         String direccion= edDireccion.getText().toString();
@@ -75,6 +74,7 @@ public class ActivityCitas extends AppCompatActivity implements View.OnClickList
         values.put("fecha",f);
         values.put("hora",h);
         values.put("nombrePaciente",nombre);
+        values.put("DNI",dni);
         values.put("email",email);
         values.put("telefono",telefono);
         values.put("direccion",direccion);

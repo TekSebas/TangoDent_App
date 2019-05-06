@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     case R.id.EntradaRapida:
 
-                        Intent intent1 = new Intent(getApplicationContext(), ActivityCitas.class);
+                        Intent intent1 = new Intent(getApplicationContext(), ActivityRegistroCitas.class);
                         startActivity(intent1);
 
                         break;

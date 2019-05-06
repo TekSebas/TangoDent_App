@@ -33,7 +33,7 @@ public class ActivityDoctor extends AppCompatActivity implements View.OnClickLis
 
             case R.id.botonTomaCitas:
 
-                Intent intentCitas= new Intent(this, ActivityCitas.class);
+                Intent intentCitas= new Intent(this, ActivityRegistroCitas.class);
 
 
 
