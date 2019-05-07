@@ -8,7 +8,7 @@
     tools:context=".ActivityBACitas">
 
     <EditText
-        android:id="@+id/textTlf"
+        android:id="@+id/text_Tlf"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.699" />
 
     <EditText
-        android:id="@+id/textCiudad"
+        android:id="@+id/text_Ciudad"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.869" />
 
     <EditText
-        android:id="@+id/textDireccion"
+        android:id="@+id/text_Direccion"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.783" />
 
     <EditText
-        android:id="@+id/textDuracion"
+        android:id="@+id/text_Duracion"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -80,7 +80,7 @@
         app:layout_constraintVertical_bias="0.365" />
 
     <EditText
-        android:id="@+id/textEmail"
+        android:id="@+id/text_Email"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -116,7 +116,7 @@
         app:layout_constraintVertical_bias="0.448" />
 
     <EditText
-        android:id="@+id/textFecha"
+        android:id="@+id/text_Fecha"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -134,7 +134,7 @@
         app:layout_constraintVertical_bias="0.197" />
 
     <EditText
-        android:id="@+id/textServicio"
+        android:id="@+id/text_Servicio"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -152,7 +152,7 @@
         app:layout_constraintVertical_bias="0.112" />
 
     <EditText
-        android:id="@+id/textHora"
+        android:id="@+id/text_Hora"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -203,35 +203,19 @@
         app:layout_constraintVertical_bias="0.529" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="149dp"
+        android:id="@+id/botonActualizar"
+        android:layout_width="201dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Buscar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.986" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="149dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:text="Actualizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.654"
+        app:layout_constraintHorizontal_bias="0.297"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.986" />
+        app:layout_constraintVertical_bias="0.988" />
 </android.support.constraint.ConstraintLayout>
