@@ -22,8 +22,8 @@ public class CitaCRUD {
     public void crearCitas(Cita cita, Connection cn) {
 
         try {
-            String consulta = "INSERT INTO citas (nombreServicio,fecha,hora, nombrePaciente, email, telefono,direccion,ciudad) VALUES " +
-                    "('" + cita.getNombreServicio() + "','" + cita.getFecha() + "','" + cita.getHora() + "','" + cita.getNombre() + "','" + cita.getEmail() + "','" + cita.getTelefono() + "','" +
+            String consulta = "INSERT INTO citas (nombreServicio,fecha,hora,duracion, nombrePaciente, email, telefono,direccion,ciudad) VALUES " +
+                    "('" + cita.getNombreServicio() + "','" + cita.getFecha() + "','" + cita.getHora() + "','" + cita.getDuracion() + "','" + cita.getNombre() + "','" + cita.getEmail() + "','" + cita.getTelefono() + "','" +
                     cita.getDireccion() + "','" + cita.getCiudad() + "')";
 
             sentencia = cn.createStatement();

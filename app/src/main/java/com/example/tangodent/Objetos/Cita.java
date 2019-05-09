@@ -8,6 +8,7 @@ public class Cita {
     public String nombreServicio;
     public java.sql.Date fecha;
     public long hora;
+    public String duracion;
     public String nombre;
     public String dni;
     public String email;
@@ -18,10 +19,11 @@ public class Cita {
     public Cita() {
     }
 
-    public Cita(String nombreServicio, Date fecha, long hora, String nombre, String dni, String email, String telefono, String direccion, String ciudad) {
+    public Cita(String nombreServicio, Date fecha, long hora,String duracion, String nombre, String dni, String email, String telefono, String direccion, String ciudad) {
         this.nombreServicio = nombreServicio;
         this.fecha = fecha;
         this.hora = hora;
+        this.duracion = duracion;
         this.nombre = nombre;
         this.dni = dni;
         this.email = email;
@@ -100,5 +102,13 @@ public class Cita {
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
+    }
+
+    public String getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(String duracion) {
+        this.duracion = duracion;
     }
 }

@@ -98,7 +98,7 @@
         app:layout_constraintVertical_bias="0.614" />
 
     <EditText
-        android:id="@+id/textNombre"
+        android:id="@+id/text_Nombre"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -170,7 +170,7 @@
         app:layout_constraintVertical_bias="0.282" />
 
     <EditText
-        android:id="@+id/textDNI"
+        android:id="@+id/text_DNI"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"

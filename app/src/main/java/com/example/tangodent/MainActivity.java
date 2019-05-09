@@ -54,21 +54,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
 
 
-
-        /*boton=findViewById(R.id.button);
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference usuariosRef = database.getReference(FirebaseReferences.FIREBASE_REFERENCE);
-        boton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Coche coche= new Coche("Ford","Toni",5,4);
-
-                usuariosRef.child(FirebaseReferences.COCHE_REFERENCE).push().setValue(coche);
-
-            }
-        });*/
-
         boton1.setOnClickListener(this);
         boton.setOnClickListener(this);
 
@@ -90,137 +75,91 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
-        private void iniciarDoctor (String email, String pass){
-            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        Log.i("SESION", "Sesión iniciada correctamente como Doctor");
-                        Intent intent = new Intent(getApplicationContext(), ActivityDoctor.class);
-                        startActivity(intent);
-                    } else {
-                        Log.e("SESION", task.getException().getMessage() + "");
-                    }
-                }
-            });
-        }
-        private void iniciarAdmin (String email, String pass){
-            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.i("SESION", "Sesión iniciada correctamente como Admin");
-                            Intent intent = new Intent(getApplicationContext(), ActivityAdmin.class);
-                            startActivity(intent);
-                        } else {
-                            Log.e("SESION", task.getException().getMessage() + "");
-                        }
-                    }
-                });
-            }
 
+    private void iniciarDoctor(String email, String pass) {
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onClick (View v){
-                switch (v.getId()) {
-
-                    case R.id.botonEnviar:
-
-                        String email = ed.getText().toString();
-                        String pass = ed1.getText().toString();
-
-
-                        if(email.equals("danielschuler@hotmail.com")){
-                            iniciarDoctor(email,pass);
-                        }else if(email.equals("sebasschulerdeveloper@gmail.com")){
-                            iniciarAdmin(email,pass);
-                        }else{
-                            iniciarUsuarios(email,pass);
-                        }
-
-
-
-
-                        break;
-                    case R.id.botonRegistro:
-
-                        Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
-                        startActivity(intent);
-
-
-
-                /*String email_Registro= ed.getText().toString();
-                String pass_Registro= ed1.getText().toString();
-
-                registrar(email_Registro,pass_Registro);
-                */
-
-                        break;
-
-                    case R.id.EntradaRapida:
-
-                        Intent intent1 = new Intent(getApplicationContext(), ActivityRegistroCitas.class);
-                        startActivity(intent1);
-
-                        break;
-
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Log.i("SESION", "Sesión iniciada correctamente como Doctor");
+                    Intent intent = new Intent(getApplicationContext(), ActivityDoctor.class);
+                    startActivity(intent);
+                } else {
+                    Log.e("SESION", task.getException().getMessage() + "");
                 }
             }
+        });
+    }
 
+    private void iniciarAdmin(String email, String pass) {
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            protected void onStart () {
-                super.onStart();
-                FirebaseAuth.getInstance().addAuthStateListener(mAuthListener);
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Log.i("SESION", "Sesión iniciada correctamente como Admin");
+                    Intent intent = new Intent(getApplicationContext(), ActivityAdmin.class);
+                    startActivity(intent);
+                } else {
+                    Log.e("SESION", task.getException().getMessage() + "");
+                }
             }
+        });
+    }
 
-            @Override
-            protected void onStop () {
-                super.onStop();
-                if (mAuthListener != null) {
-                    FirebaseAuth.getInstance().removeAuthStateListener(mAuthListener);
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+            case R.id.botonEnviar:
+
+                String email = ed.getText().toString();
+                String pass = ed1.getText().toString();
+
+
+                if (email.equals("danielschuler@hotmail.com")) {
+                    iniciarDoctor(email, pass);
+                } else if (email.equals("sebasschulerdeveloper@gmail.com")) {
+                    iniciarAdmin(email, pass);
+                } else {
+                    iniciarUsuarios(email, pass);
                 }
 
-            }
 
-    /*
-                usuariosRef.child(FirebaseReferences.COCHE_REFERENCE).addValueEventListener(new ValueEventListener() {
-                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                break;
+            case R.id.botonRegistro:
 
-                        Coche coche = dataSnapshot.getValue(Coche.class);
-
-                        Log.i("COCHE", dataSnapshot.toString());
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-                */
+                Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+                startActivity(intent);
 
 
-                /*myRef.push().setValue(5);
-                ValueEventListener valueEventListener= new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        int valor= dataSnapshot.getValue(Integer.class);
-                        Log.i("DATOS", valor+"");
-                    }
+                break;
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.i("Error",databaseError.getMessage());
-                    }
-                };
+            case R.id.EntradaRapida:
 
-                myRef.addValueEventListener(valueEventListener);
-*/
-                /*FragmentManager fragmentManager=getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.fragment,new Fragmento());
-                fragmentTransaction.commit();*/
+                Intent intent1 = new Intent(getApplicationContext(), ActivityRegistroCitas.class);
+                startActivity(intent1);
 
+                break;
 
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseAuth.getInstance().addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            FirebaseAuth.getInstance().removeAuthStateListener(mAuthListener);
+        }
+
+    }
+
+
+}
 
 

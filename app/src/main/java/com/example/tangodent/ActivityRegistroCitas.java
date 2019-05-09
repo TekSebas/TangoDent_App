@@ -18,7 +18,7 @@ import java.sql.Connection;
 
 public class ActivityRegistroCitas extends AppCompatActivity implements View.OnClickListener{
 
-    EditText edServicio,edNombre,edDNI,edEmail,edTelefono,edDireccion,edCiudad;
+    EditText edServicio,edNombre,edDNI,edEmail,edTelefono,edDireccion,edCiudad,edDuracion;
     TextView edFecha,edHora;
     Button botonCita;
 
@@ -32,6 +32,7 @@ public class ActivityRegistroCitas extends AppCompatActivity implements View.OnC
         edServicio=findViewById(R.id.textServicio);
         edFecha= findViewById(R.id.textFecha);
         edHora=findViewById(R.id.textHora);
+        edDuracion=findViewById(R.id.textDuracion);
         edNombre=findViewById(R.id.textNombre);
         edDNI=findViewById(R.id.textDNI);
         edEmail=findViewById(R.id.textEmail);
@@ -49,9 +50,8 @@ public class ActivityRegistroCitas extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-        CitaCRUD citaCRUD= new CitaCRUD();
-        registrarCita();
 
+        registrarCita();
 
     }
 
@@ -59,13 +59,14 @@ public class ActivityRegistroCitas extends AppCompatActivity implements View.OnC
         String nombreServicio= edServicio.getText().toString();
         String f= edFecha.getText().toString();
         String h= edHora.getText().toString();
+        String duracion= edDuracion.getText().toString();
         String nombre= edNombre.getText().toString();
         String dni=edDNI.getText().toString();
         String email= edEmail.getText().toString();
         String telefono= edTelefono.getText().toString();
         String direccion= edDireccion.getText().toString();
         String ciudad= edCiudad.getText().toString();
-        ConexionSQLiteHelper conn= new ConexionSQLiteHelper(this,"tangodentdb",null,1);
+        ConexionSQLiteHelper conn= new ConexionSQLiteHelper(this,"tangodentdb",null,2);
         SQLiteDatabase db= conn.getWritableDatabase();
 
         ContentValues values= new ContentValues();
@@ -73,6 +74,7 @@ public class ActivityRegistroCitas extends AppCompatActivity implements View.OnC
         values.put("nombreServicio",nombreServicio);
         values.put("fecha",f);
         values.put("hora",h);
+        values.put("duracion",duracion);
         values.put("nombrePaciente",nombre);
         values.put("DNI",dni);
         values.put("email",email);
