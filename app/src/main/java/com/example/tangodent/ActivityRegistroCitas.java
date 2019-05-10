@@ -66,7 +66,7 @@ public class ActivityRegistroCitas extends AppCompatActivity implements View.OnC
         String telefono= edTelefono.getText().toString();
         String direccion= edDireccion.getText().toString();
         String ciudad= edCiudad.getText().toString();
-        ConexionSQLiteHelper conn= new ConexionSQLiteHelper(this,"tangodentdb",null,2);
+        ConexionSQLiteHelper conn= new ConexionSQLiteHelper(this,"tangodentbd",null,2);
         SQLiteDatabase db= conn.getWritableDatabase();
 
         ContentValues values= new ContentValues();

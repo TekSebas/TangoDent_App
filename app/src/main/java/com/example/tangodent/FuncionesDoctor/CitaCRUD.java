@@ -38,7 +38,7 @@ public class CitaCRUD {
 
     }
 
-    public ResultSet comprobarNombre(Cita cita,Connection cn) {
+    public ResultSet comprobarNombre(Cita cita, Connection cn) {
 
         try {
 
@@ -58,7 +58,7 @@ public class CitaCRUD {
         return registros;
     }
 
-    public void Actualizar(Cita cita,Connection cn) {
+    public void Actualizar(Cita cita, Connection cn) {
         try {
 
             PreparedStatement consulta = cn.prepareStatement("UPDATE alumnos SET nombre=?,telefono=? WHERE id=?");
@@ -80,12 +80,12 @@ public class CitaCRUD {
             String consulta = "SELECT * FROM alumnos";
             sentencia = cn.createStatement();
             registros = sentencia.executeQuery(consulta);
-            while(registros.next()){
+            while (registros.next()) {
 
-                String nombre=registros.getString(2);
-                String telef=registros.getString(3);
-               // Cita alumn=new Cita(/**/);
-               // citas.add(/**/);
+                String nombre = registros.getString(2);
+                String telef = registros.getString(3);
+                // Cita alumn=new Cita(/**/);
+                // citas.add(/**/);
             }
         } catch (SQLException ex) {
             Logger.getLogger(CitaCRUD.class.getName()).log(Level.SEVERE, null, ex);
@@ -93,7 +93,6 @@ public class CitaCRUD {
         return citas;
 
     }
-
 
 
 }
