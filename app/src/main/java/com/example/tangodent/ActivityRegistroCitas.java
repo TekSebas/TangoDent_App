@@ -70,7 +70,7 @@ public class ActivityRegistroCitas extends AppCompatActivity implements View.OnC
         SQLiteDatabase db= conn.getWritableDatabase();
 
         ContentValues values= new ContentValues();
-        values.put("idCita",1);
+
         values.put("nombreServicio",nombreServicio);
         values.put("fecha",f);
         values.put("hora",h);

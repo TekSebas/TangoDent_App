@@ -72,6 +72,7 @@ public class ActivityBACitas extends AppCompatActivity implements View.OnClickLi
     }
 
     private void consultarCita() {
+
         SQLiteDatabase db = conn.getReadableDatabase();
         String[] parametros = {ed_DNI.getText().toString()};
         String[] campos = {"nombreServicio", "fecha", "hora", "duracion", "nombrePaciente", "email", "telefono", "direccion", "ciudad"};

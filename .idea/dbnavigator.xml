@@ -23,10 +23,14 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="fdf783a3-c750-449a-808a-148a83440512">
+        <schema name="main" object-types="view, table" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="459e0ac8-0a73-4fba-bed1-40cdfc13da1f">
+    <connection id="fdf783a3-c750-449a-808a-148a83440512">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
@@ -34,11 +38,7 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="459e0ac8-0a73-4fba-bed1-40cdfc13da1f" />
-  </component>
-  <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="459e0ac8-0a73-4fba-bed1-40cdfc13da1f" dataset="main.citas" active-filter-id="" />
-    <filter-actions connection-id="459e0ac8-0a73-4fba-bed1-40cdfc13da1f" dataset="main.android_metadata" active-filter-id="" />
+    <connection id="fdf783a3-c750-449a-808a-148a83440512" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -63,7 +63,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="459e0ac8-0a73-4fba-bed1-40cdfc13da1f" active="true">
+      <connection id="fdf783a3-c750-449a-808a-148a83440512" active="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -108,7 +108,7 @@
           <charset value="UTF-8" />
           <session-management value="true" />
           <ddl-file-binding value="true" />
-          <database-logging value="false" />
+          <database-logging value="true" />
           <connect-automatically value="true" />
           <restore-workspace value="true" />
           <restore-workspace-deep value="true" />
