@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityOpcionesUsuario"></activity>
+        <activity android:name=".ActivityDetalleUsuario"></activity>
+        <activity android:name=".ActivityOpcionesUsuario" />
         <activity android:name=".ActivityBACitas" />
         <activity android:name=".ActivityRegistroCitas" />
         <activity android:name=".ActivityAdmin" />
