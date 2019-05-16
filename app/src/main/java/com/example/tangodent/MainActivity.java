@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void iniciarDoctor() {
 
         Intent intent = new Intent(getApplicationContext(), ActivityDoctor.class);
+        intent.putExtra("email",ed.getText().toString());
         startActivity(intent);
 
     }

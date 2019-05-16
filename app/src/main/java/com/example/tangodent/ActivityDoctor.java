@@ -47,8 +47,8 @@ public class ActivityDoctor extends AppCompatActivity implements View.OnClickLis
 
                 break;
             case R.id.botonOpcionesUser:
-
-
+                Intent intentOpcionesUsuarios=new Intent(this,ActivityDetalleUsuario.class);
+                startActivity(intentOpcionesUsuarios);
                 break;
 
             case R.id.botonBA:
