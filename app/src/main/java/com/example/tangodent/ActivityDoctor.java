@@ -27,6 +27,10 @@ public class ActivityDoctor extends AppCompatActivity implements View.OnClickLis
         botonEventos.setOnClickListener(this);
         botonOpciones.setOnClickListener(this);
         botonBA.setOnClickListener(this);
+
+
+
+
     }
 
     @Override
@@ -47,7 +51,10 @@ public class ActivityDoctor extends AppCompatActivity implements View.OnClickLis
 
                 break;
             case R.id.botonOpcionesUser:
+
+                String email= getIntent().getExtras().getString("email");
                 Intent intentOpcionesUsuarios=new Intent(this,ActivityDetalleUsuario.class);
+                intentOpcionesUsuarios.putExtra("email",email);
                 startActivity(intentOpcionesUsuarios);
                 break;
 

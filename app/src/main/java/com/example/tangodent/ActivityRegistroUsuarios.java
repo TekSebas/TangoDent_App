@@ -2,6 +2,7 @@ package com.example.tangodent;
 
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -43,19 +44,6 @@ public class ActivityRegistroUsuarios extends AppCompatActivity implements View.
         guardar = findViewById(R.id.botonGuardar);
         guardar.setOnClickListener(this);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setTitle("¡Perfecto!")
-                .setMessage("Se ha creado el usuario correctamente")
-                .setPositiveButton("OK",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                System.out.println("Hola buenas tardes");
-                            }
-                        });
-        builder.create();
-
     }
 
 
@@ -93,22 +81,49 @@ public class ActivityRegistroUsuarios extends AppCompatActivity implements View.
         } else {
 
             ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "tangodentbd", null, 2);
-            SQLiteDatabase db = conn.getWritableDatabase();
-            ContentValues values = new ContentValues();
 
 
+            SQLiteDatabase dbR = conn.getReadableDatabase();
+            String[] parametros = {email.getText().toString()};
+            String[] campos = {"email"};
 
-            values.put("nombre", nombre_Registro + " " + apellido_Registro);
-            values.put("direccion", direccion_Registro);
-            values.put("email", email_Registro);
-            values.put("fechaNacimiento", fechaNacimiento_Registro);
-            values.put("pass", pass_Registro);
 
-            Long idResultante = db.insert("usuarios", "idUsuario", values);
-            Toast.makeText(this, "Id Registro: " + idResultante, Toast.LENGTH_SHORT).show();
-            db.close();
+            try {
+                Cursor cursor = dbR.query("usuarios", campos, "email" + "=?", parametros, null, null, null);
+                cursor.moveToFirst();
+                System.out.println(cursor.getString(0));
+                if (cursor.getString(0).equals(email.getText().toString())) {
+
+                    Toast.makeText(getApplicationContext(), "Ya existe un usuario con el email introducido!", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    SQLiteDatabase dbW = conn.getWritableDatabase();
+                    ContentValues values = new ContentValues();
+
+                    values.put("nombre", nombre_Registro);
+                    values.put("apellido", apellido_Registro);
+                    values.put("direccion", direccion_Registro);
+                    values.put("email", email_Registro);
+                    values.put("fechaNacimiento", fechaNacimiento_Registro);
+                    values.put("pass", pass_Registro);
+
+                    Long idResultante = dbW.insert("usuarios", "idUsuario", values);
+                    Toast.makeText(this, "Id Registro: " + idResultante, Toast.LENGTH_SHORT).show();
+                    dbW.close();
+                }
+                cursor.close();
+            } catch (Exception e) {
+
+                Toast.makeText(getApplicationContext(), "Error al crear un usuario", Toast.LENGTH_LONG).show();
+                //limpiar();
+            }
+
+
         }
     }
+
+
 
     public AlertDialog DialogErrorCampos() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());

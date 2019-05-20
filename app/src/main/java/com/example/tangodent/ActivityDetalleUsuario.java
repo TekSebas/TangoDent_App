@@ -58,7 +58,21 @@ public class ActivityDetalleUsuario extends AppCompatActivity implements View.On
 
             case R.id.boton_Mostrar:
 
+                SQLiteDatabase db = conn.getReadableDatabase();
+                String[] parametros = {tx_Email.getText().toString()};
+                String[] campos = {"apellido"};
 
+                try {
+                    Cursor cursor = db.query("usuarios", campos, "email" + "=?", parametros, null, null, null);
+                    cursor.moveToFirst();
+                    tx_Pass.setText(cursor.getString(0));
+                    cursor.close();
+
+                } catch (Exception e) {
+
+                    Toast.makeText(getApplicationContext(), "No hay ususario con ese Email", Toast.LENGTH_LONG).show();
+                    //limpiar();
+                }
 
                 break;
 
@@ -72,7 +86,7 @@ public class ActivityDetalleUsuario extends AppCompatActivity implements View.On
 
         SQLiteDatabase db = conn.getReadableDatabase();
         String[] parametros = {tx_Email.getText().toString()};
-        String[] campos = {"nombre","direccion","email","fechaNacimiento","pass"};
+        String[] campos = {"nombre","apellido","direccion","fechaNacimiento"};
 
         try {
             Cursor cursor = db.query("usuarios", campos, "email" + "=?", parametros, null, null, null);
@@ -80,14 +94,13 @@ public class ActivityDetalleUsuario extends AppCompatActivity implements View.On
             tx_Nombre.setText(cursor.getString(0));
             tx_Apellido.setText(cursor.getString(1));
             tx_Direccion.setText(cursor.getString(2));
-            tx_FNacimiento.setText(cursor.getString(4));
-            tx_Pass.setText(cursor.getString(5));
+            tx_FNacimiento.setText(cursor.getString(3));
 
             cursor.close();
 
         } catch (Exception e) {
 
-            Toast.makeText(getApplicationContext(), "No existe la cita con ese DNI", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "No hay usuario con ese Email", Toast.LENGTH_LONG).show();
             //limpiar();
         }
     }

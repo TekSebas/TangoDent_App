@@ -22,5 +22,10 @@ public class ActivityOpcionesUsuario extends AppCompatActivity {
         ed_PassAct=findViewById(R.id.textPassAct);
         ed_Pass2Act=findViewById(R.id.textPass2Act);
 
+
+
+
+
+
     }
 }
