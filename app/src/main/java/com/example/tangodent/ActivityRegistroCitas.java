@@ -56,6 +56,8 @@ public class ActivityRegistroCitas extends AppCompatActivity implements View.OnC
     }
 
     private void registrarCita(){
+
+
         String nombreServicio= edServicio.getText().toString();
         String f= edFecha.getText().toString();
         String h= edHora.getText().toString();
@@ -67,10 +69,16 @@ public class ActivityRegistroCitas extends AppCompatActivity implements View.OnC
         String direccion= edDireccion.getText().toString();
         String ciudad= edCiudad.getText().toString();
         ConexionSQLiteHelper conn= new ConexionSQLiteHelper(this,"tangodentbd",null,2);
+
+
+        String horaYminutos= edHora.getText().toString();
+        String[] horaMin= horaYminutos.split(":");
+        String hora= horaMin[0];
+        String minuto= horaMin[1];
+
+
         SQLiteDatabase db= conn.getWritableDatabase();
-
         ContentValues values= new ContentValues();
-
         values.put("nombreServicio",nombreServicio);
         values.put("fecha",f);
         values.put("hora",h);
@@ -87,6 +95,12 @@ public class ActivityRegistroCitas extends AppCompatActivity implements View.OnC
         Toast.makeText(this, "Id Registro: "+idResultante, Toast.LENGTH_SHORT).show();
         db.close();
     }
+
+    public void separarHora(){
+
+
+    }
+
 
     }
 
