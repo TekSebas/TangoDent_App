@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
 
             case R.id.botonEnviar:
-                ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "tangodentbd", null, 2);
+                ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "tangodentbd", null, 3);
                 ;
                 String email = ed.getText().toString();
                 String pass = ed1.getText().toString();

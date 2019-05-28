@@ -23,7 +23,7 @@ public class ActivityDetalleUsuario extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_usuario);
 
-        conn = new ConexionSQLiteHelper(this, "tangodentbd", null, 2);
+        conn = new ConexionSQLiteHelper(this, "tangodentbd", null, 3);
 
         tx_Nombre=findViewById(R.id.textViewNombre);
         tx_Apellido=findViewById(R.id.textViewApellido);

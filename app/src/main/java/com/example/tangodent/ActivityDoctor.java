@@ -16,7 +16,7 @@ public class ActivityDoctor extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor);
-        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "tangodentdb", null, 2);
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "tangodentdb", null, 3);
 
         botonCita = findViewById(R.id.botonTomaCitas);
         botonEventos = findViewById(R.id.botonCalendario);

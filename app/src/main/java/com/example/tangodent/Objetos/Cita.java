@@ -5,6 +5,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 
 public class Cita {
+    public int idCita;
     public String nombreServicio;
     public java.sql.Date fecha;
     public long hora;
@@ -20,6 +21,20 @@ public class Cita {
     }
 
     public Cita(String nombreServicio, Date fecha, long hora,String duracion, String nombre, String dni, String email, String telefono, String direccion, String ciudad) {
+        this.nombreServicio = nombreServicio;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.duracion = duracion;
+        this.nombre = nombre;
+        this.dni = dni;
+        this.email = email;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.ciudad = ciudad;
+    }
+
+    public Cita(int idCita, String nombreServicio, Date fecha, long hora, String duracion, String nombre, String dni, String email, String telefono, String direccion, String ciudad) {
+        this.idCita = idCita;
         this.nombreServicio = nombreServicio;
         this.fecha = fecha;
         this.hora = hora;
@@ -110,5 +125,13 @@ public class Cita {
 
     public void setDuracion(String duracion) {
         this.duracion = duracion;
+    }
+
+    public int getIdCita() {
+        return idCita;
+    }
+
+    public void setIdCita(int idCita) {
+        this.idCita = idCita;
     }
 }

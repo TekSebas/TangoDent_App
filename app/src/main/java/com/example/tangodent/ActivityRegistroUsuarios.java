@@ -80,7 +80,7 @@ public class ActivityRegistroUsuarios extends AppCompatActivity implements View.
             DialogErrorCampos();
         } else {
 
-            ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "tangodentbd", null, 2);
+            ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "tangodentbd", null, 3);
 
 
             SQLiteDatabase dbR = conn.getReadableDatabase();

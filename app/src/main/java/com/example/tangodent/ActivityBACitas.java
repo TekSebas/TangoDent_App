@@ -23,7 +23,7 @@ public class ActivityBACitas extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bacitas);
 
-        conn = new ConexionSQLiteHelper(this, "tangodentbd", null, 2);
+        conn = new ConexionSQLiteHelper(this, "tangodentbd", null, 3);
 
 
         ed_Servicio = findViewById(R.id.text_Servicio);
